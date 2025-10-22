@@ -53,6 +53,7 @@ function createTodoNode(todo, index) {
     // Delete todo
     const delBtn = document.createElement("button");
     delBtn.textContent = "Delete";
+    delBtn.className = "delBtn";
     delBtn.addEventListener("click", () => {
         todos.splice(index, 1);
         renderTodos()
@@ -87,6 +88,17 @@ todoInput.addEventListener("keydown", (e) => {
 function renderTodos() {
     list.innerHTML = "";
 
+    if(todos.length === 0)
+    {
+        const emptyMsg = document.createElement("p");
+        emptyMsg.textContent = "No todos yet";
+        emptyMsg.style.fontStyle = "italic";
+        emptyMsg.style.color = "#888";
+        emptyMsg.style.textAlign = "center";
+        emptyMsg.style.fontWeight = "bold"
+        list.appendChild(emptyMsg)
+
+    }
     // Recreate each item in the list
     todos.forEach((todo, index) => {
         const node = createTodoNode(todo, index);

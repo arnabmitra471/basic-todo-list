@@ -52,11 +52,12 @@ h2 {
 
 #todo-list {
     list-style-type: none;
-    margin: 20px 15px;
+    margin: 10px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: mistyrose;
+    min-height: 50vh;
 }
 
 #todo-list li {
@@ -69,4 +70,14 @@ h2 {
     transition: all 1s ease-in-out;
     cursor: pointer;
     border-radius: 20px;
+}
+.delBtn{
+    background-color: orangered;
+    padding: 15px 10px;
+    border-radius: 15px;
+    margin: 0px 8px;
+}
+.delBtn:hover{
+    background-color: azure;
+    transition: background-color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
